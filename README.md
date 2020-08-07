@@ -13,6 +13,9 @@ Tutorials：
 
 4、神经网络模块，需安装MATLAB 神经网络工具箱。
 
+5、使用时需要将全部文件都下载到同一个文件夹。
+
+6、籽粒的信息保存成CSV文件，默认路径为D盘根目录。
 Contact:
 
 Issues should be raised directly in the repository. For business inquiries or professional support requests please  email zhaohuamin@sxau.edu.cn 
