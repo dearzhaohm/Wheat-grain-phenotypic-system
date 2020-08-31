@@ -1489,17 +1489,11 @@ s = struct(field0,value0,field1,value1,field2,value2,field3,value3,field4,value4
 
 % various
 %生成表格，按列生成
-% for i = 1:count+5
-% various(1) = T(:,1);
-% result_table=table(various(1),'VNames',BD);
-% i = i + 1;
-% end
-% result_table=table(BD,t(:,1),'RowNames',BD);
 S = struct2cell(s);
 num2str(clickcounts);
 %保存表格
 % writecell(S, ['D:\种子照片',num2str(clickcounts),'.xlsx']);  %Excel格式
-writecell(S, ['D:\种子照片',num2str(clickcounts),'.csv']);   %csv格式
+writecell(S, ['./The_grains_information',num2str(clickcounts),'.csv']);   %csv格式
 
 
 % --- Executes on button press in pushbutton27.
@@ -1519,9 +1513,6 @@ f4 = imopen(L,se);                                                   %对小麦�
 %bwlabel 寻找连通区域， 4连通是指，如果像素的位置在其他像素相邻的上、下、左或右，则认为他们是连接着的
 %num 表示连通区域的个数
 %M是大小和BWing一样的图像数组，里面存放着对bwing图像的标签值（即判定为连通后，在L矩阵中标记出来） 
-% figure('NumberTitle','off','Name','Regional marking of wheat seeds'),      %小麦种子的区域标记
-% subplot(121),imshow(f4);title('Morphologically processed image')           %显示形态学操作后的图像
-% subplot(122),imshow(L);title('Tagged image')                               %显示标记后的图像  
 global status 
 status=regionprops(L,'BoundingBox');
 centroid=regionprops(L,'Centroid');
